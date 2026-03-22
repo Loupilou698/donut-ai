@@ -9,7 +9,7 @@
   :root {
     --bg:#0f0800;--surface:#1c1000;--surface2:#261500;--border:#3a2000;--border2:#4d2d00;
     --accent:#ff9100;--accent2:#ffbe5c;--accent3:#ff5100;--text:#fff5e0;
-    --muted:#7a5a30;--muted2:#a07040;--green:#6dde5a;--gold:#ffd700;
+    --muted:#7a5a30;--muted2:#a07040;--green:#6dde5a;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;height:100vh;display:flex;flex-direction:column;overflow:hidden;}
@@ -17,7 +17,6 @@
   @keyframes gm{from{background-position:0 0}to{background-position:28px 28px}}
   .gb1{position:fixed;top:-150px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,145,0,0.1) 0%,transparent 65%);pointer-events:none;z-index:0;}
   .gb2{position:fixed;bottom:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,81,0,0.08) 0%,transparent 65%);pointer-events:none;z-index:0;}
-
   header{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;border-bottom:2px solid var(--border);background:rgba(15,8,0,0.96);backdrop-filter:blur(12px);z-index:100;gap:10px;flex-shrink:0;}
   .lw{display:flex;align-items:center;gap:11px;}
   .ds{width:46px;height:46px;animation:ds 8s linear infinite;filter:drop-shadow(0 0 8px rgba(255,145,0,0.5));}
@@ -31,11 +30,9 @@
   @keyframes bl{0%,100%{opacity:1}50%{opacity:0.25}}
   .bc{background:var(--surface2);border:1.5px solid var(--border);color:var(--muted2);padding:6px 14px;border-radius:9px;font-family:'Nunito',sans-serif;font-size:0.72rem;font-weight:800;cursor:pointer;transition:all .2s;}
   .bc:hover{border-color:var(--accent);color:var(--accent);}
-
   #msgs{flex:1;overflow-y:auto;padding:18px 0 8px;z-index:5;scroll-behavior:smooth;}
   #msgs::-webkit-scrollbar{width:3px;}
   #msgs::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
-
   #welcome{max-width:680px;margin:16px auto 0;padding:0 18px;text-align:center;animation:pop .45s cubic-bezier(.175,.885,.32,1.275);}
   @keyframes pop{from{opacity:0;transform:scale(.88) translateY(24px)}to{opacity:1;transform:scale(1) translateY(0)}}
   .bd{font-size:3.5rem;margin-bottom:10px;animation:wb 3s ease-in-out infinite;}
@@ -46,7 +43,6 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
   .chip{background:var(--surface2);border:1.5px solid var(--border2);color:var(--accent2);padding:8px 15px;border-radius:10px;font-size:.79rem;font-weight:700;cursor:pointer;transition:all .18s;}
   .chip:hover{border-color:var(--accent);background:rgba(255,145,0,.07);transform:translateY(-2px);box-shadow:0 4px 14px rgba(255,145,0,.14);}
-
   .row{display:flex;gap:12px;padding:8px 18px;max-width:740px;margin:0 auto;width:100%;animation:ms .22s ease;}
   @keyframes ms{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
   .av{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;margin-top:2px;}
@@ -58,15 +54,12 @@
   .bub p{margin-bottom:.45em;}.bub p:last-child{margin-bottom:0;}
   .bub strong{color:var(--accent2);}
   .bub code{background:rgba(255,145,0,.1);border:1px solid rgba(255,145,0,.22);padding:1px 6px;border-radius:4px;font-size:.83em;color:var(--accent);font-family:monospace;}
-  .bub ul{padding-left:1.2em;}.bub li{margin-bottom:.25em;}
-  .stag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,215,0,.07);border:1px solid rgba(255,215,0,.22);color:var(--gold);padding:2px 9px;border-radius:20px;font-size:.68rem;font-weight:800;margin-bottom:7px;letter-spacing:.04em;}
   #tr .bub{padding:14px 18px;}
   .dots{display:flex;gap:5px;align-items:center;}
   .dots span{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:db 1.2s infinite;}
   .dots span:nth-child(2){animation-delay:.2s;}
   .dots span:nth-child(3){animation-delay:.4s;background:var(--accent3);}
   @keyframes db{0%,80%,100%{transform:scale(.55);opacity:.4}40%{transform:scale(1);opacity:1}}
-
   .ia{border-top:2px solid var(--border);background:rgba(15,8,0,.97);backdrop-filter:blur(12px);padding:13px 18px 15px;z-index:100;flex-shrink:0;}
   .ib{max-width:740px;margin:0 auto;display:flex;gap:10px;align-items:flex-end;background:var(--surface2);border:2px solid var(--border2);border-radius:14px;padding:10px 13px;transition:border-color .2s,box-shadow .2s;}
   .ib:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,145,0,.09);}
@@ -79,7 +72,6 @@
 </head>
 <body>
 <div class="gb1"></div><div class="gb2"></div>
-
 <header>
   <div class="lw">
     <svg class="ds" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -101,13 +93,12 @@
     <button class="bc" onclick="clearChat()">🗑 Effacer</button>
   </div>
 </header>
-
 <div id="msgs">
   <div id="welcome">
     <div class="bd">🍩</div>
     <h1>Donut AI</h1>
     <p>Ton assistant <b>DonutSMP</b> officieux !<br>
-    <b>Je sais tout sur le serveur — et je cherche sur le web pour la méta 🔍</b></p>
+    <b>Je sais tout sur le serveur 🔍</b></p>
     <div class="chips">
       <div class="chip" onclick="chip(this)">🍩 Qui a créé DonutSMP ?</div>
       <div class="chip" onclick="chip(this)">💰 C'est quoi la méta pour s'enrichir ?</div>
@@ -120,7 +111,6 @@
     </div>
   </div>
 </div>
-
 <div class="ia">
   <div class="ib">
     <textarea id="inp" placeholder="Pose ta question sur DonutSMP..." rows="1"></textarea>
@@ -130,125 +120,24 @@
       </svg>
     </button>
   </div>
-  <div class="hint">Entrée pour envoyer &nbsp;·&nbsp; Maj+Entrée pour nouvelle ligne</div>
+  <div class="hint">Entrée pour envoyer · Maj+Entrée pour nouvelle ligne</div>
 </div>
-
 <script>
-const KB = `
-=== DONUTSMP — BASE DE CONNAISSANCES COMPLÈTE ===
+const KB = `Tu es Donut AI, assistant expert DonutSMP. Tu parles de façon décontractée et fun avec des emojis. Tu réponds en français sauf si on te parle en anglais.
 
-CRÉATEUR & HISTOIRE :
-- Créé par DrDonut (vrai nom : Nate Filson), streamer américain Crystal PvP
-- Stream quasi-quotidiennement, jusqu'à 10 000 viewers live
-- Diplômé de Douglas S Freeman High School, Richmond Virginia, promo 2023 (volleyball, jersey #4)
-- Vit avec ses amis/streamers Carvs et Qndres (depuis décembre 2025)
-- A lancé le serveur depuis 0 joueurs, maintenant le plus grand serveur Minecraft au monde
-- Bat régulièrement Hypixel avec 35 000-40 000+ joueurs simultanés
-- Record historique : ~60k joueurs (dont 15k bots via proxy chinois, donc non officiel)
-- Aime TP les joueurs et noter leurs bases /10 en stream — c'est devenu une tradition
-
-SAISONS :
-- Saison 1 : terminée à cause d'une économie hyper-inflatée et de dupers
-- Saison 2 : saison actuelle, DrDonut a dit qu'elle ne finira jamais ("S2 is forever")
-
-INFOS SERVEUR :
-- IP Java + Bedrock : donutsmp.net (port Bedrock : 19132)
-- Compatible toutes versions modernes Minecraft
-- Logiciel serveur : Spigot
-- Gamemodes : Survival, Duels (Crystal PvP), AFK Zone
-- Si tu meurs → banni 2 jours (mode hardcore)
-- Rank premium : Donut+ (30 jours) → plus de homes, perks exclusifs
-- Rank Media (streamer/créateur) → accès à des perks supplémentaires
-
-ÉCONOMIE :
-Deux monnaies :
-1. Money/Coins : monnaie principale, gagnée en vendant items
-2. Shards : gagnés en AFK (1 shard/minute) ou en tuant des joueurs (10 shards/kill) → sert à acheter des spawners (/shardshop, skeleton spawner = 500 shards, Iron Golem = 1500 shards)
-
-Commandes clés :
-- /ah : Auction House (vendre/acheter entre joueurs)
-- /orders : commandes automatiques (souvent moins cher que /ah)
-- /sell : vente directe au serveur
-- /shardshop : acheter spawners avec shards
-- /rtp : se téléporter aléatoirement dans le monde
-
-MÉTHODES POUR GAGNER DE L'ARGENT :
-DÉBUTANT (0 → quelques millions) :
-- Ramasser du bois, crafter des barrels → /ah sell (10-20k pièce). Si prix trop bas, faire crafting tables, bateaux, boutons, planches.
-- Toujours lister SOUS le prix le plus bas (ex: si barrels à 10k, mettre à 9.99k)
-- Avec 200k : commander du sable + poudre à canon via /orders
-
-INTERMÉDIAIRE :
-- Farms automatiques : canne à sucre, citrouilles, cactus (revenus passifs 24/7)
-- Villager trading : zombifier puis soigner → prix réduits, books enchantés max
-
-AVANCÉ :
-- Spawners : meilleurs = Iron Golem, Blaze, Enderman, Skeleton, Spider
-- Sweet spot : ~64 spawners en pile (meilleur ratio os/minute pour skeleton)
-- Au-delà : rendements décroissants → SPREAD les spawners (les espacer)
-- Kelp v4, Fungus v4 : farms mega-efficaces
-
-EXPERT :
-- Flipper l'Auction House (acheter bas, revendre haut)
-- Multi-ALT pour garder les chunks chargés et tourner plusieurs farms
-- Surveiller donut.coflnet.com pour les prix en temps réel
-
-SPAWNERS (TRÈS IMPORTANT) :
-- Sur DonutSMP les spawners NE font PAS apparaître de vrais mobs → simulent juste les drops
-- Clic droit = récupérer les ressources comme un coffre
-- Shift+clic droit = stack plusieurs spawners du même type en un bloc
-- ATTENTION : les spawners sont pie-chartables via F3 → les bases avec spawners stackés sont ciblées
-- Solution : spread les spawners (les espacer, même juste à côté l'un de l'autre suffit)
-- Blaze spawners donnent de la blaze POWDER (pas de blaze rods !)
-- Cow spawners NE donnent PAS de cuir (faut tuer de vraies vaches)
-- Donut+ / Media+ = plus de homes = mieux répartir ses spawners = moins de risque
-
-PVP & BASES :
-- Serveur centré sur Crystal PvP (CPVP) — apprendre les skills de base avant les duels
-- Le serveur est petit par rapport à la population → bases raidées rapidement (jours à semaines)
-- Record base non-raidée : ThatsTooHard → 6 mois !
-- Stratégie : cacher ses coords, utiliser multiples homes, spread spawners, partir loin en /rtp
-
-STREAMERS & JOUEURS CONNUS :
-- DrDonut (créateur) : Twitch @DrDonutttttt / YouTube @DrDonutt / TikTok @drdonutt / Discord discord.gg/donut / Twitter @DrDonut099
-- Carvs : ami et coloc de DrDonut, streamer DonutSMP, connu pour vidéo sur fake x-ray
-- Qndres (ogqndres) : ami et coloc de DrDonut, streame également DonutSMP
-- Jettism : joueur/streamer connu de la communauté
-- ThatsTooHard : légende pour base indéracinable (6 mois)
-- Bilo : joueur connu de la communauté, récemment revenu
-
-RESSOURCES UTILES :
-- Wiki officieux : donutsmp.fandom.com
-- Stats joueurs temps réel : donutstats.net
-- Calculateur skeleton spawners : donutsmpspawnercalculator.com
-- Prix AH temps réel : donut.coflnet.com
-- Store officiel : store.donutsmp.net
-- Discord : discord.gg/donutsmp
-
-RÈGLES IMPORTANTES :
-- Acheter de l'argent in-game via sites tiers = BANNABLE
-- N'acheter que sur le store officiel donutsmp.net
-- Les chargebacks/disputes sans contacter le support = suspension immédiate
-`;
-
-const SYSTEM = `Tu es Donut AI, l'assistant expert non-officiel de DonutSMP. Tu parles comme un joueur passionné — décontracté, fun, avec des emojis 🍩💰⚔️🌾. Tu réponds en français sauf si on te parle en anglais.
-
-BASE DE CONNAISSANCES (utilise-la en priorité) :
-${KB}
-
-RÈGLES :
-- Pour histoire/lore/streamers/règles/commandes : utilise directement ta base de connaissances.
-- Si des données web récentes sont fournies : utilise-les EN PRIORITÉ.
-- Donne des commandes concrètes (/ah, /orders, /sell, /shardshop, /rtp, etc.).
-- Ton ton : cool, gaming, un peu hype, comme un copain qui joue sur le serveur.`;
-
-const SEARCH_KW = ['méta','meta','argent','money','farm','farms','gagner','riche',
-  'best','meilleur','stratégie','strategie','grind','spawner','sell','vendre',
-  'économie','economie','prix','price','astuce','tip','guide','trick',
-  'actuel','récent','recent','2025','2026','update','flipper','auction',
-  'shard','iron golem','blaze','skeleton','cactus','kelp','fungus','barrels'];
-
-function needsSearch(t){return SEARCH_KW.some(k=>t.toLowerCase().includes(k));}
+DONUTSMP BASE DE CONNAISSANCES :
+- Créé par DrDonut (Nate Filson), streamer Crystal PvP, vit avec Carvs et Qndres
+- Plus grand serveur Minecraft au monde, 35-40k joueurs simultanés
+- IP : donutsmp.net (Java + Bedrock port 19132)
+- Mort = banni 2 jours. Rank Donut+ = plus de homes
+- Saison 1 terminée (dupers). Saison 2 actuelle "S2 is forever"
+- Monnaies : Money (vendre items) + Shards (1/min AFK, 10/kill)
+- Commandes : /ah /orders /sell /shardshop /rtp
+- Gagner argent : bois→barrels→/ah (débutant), farms canne/citrouilles/cactus (intermédiaire), spawners Iron Golem/Blaze/Skeleton 64 stackés (avancé), flipper /ah (expert)
+- Spawners = simulent drops, clic droit=récupérer, spread pour éviter pie-chart F3
+- PvP : Crystal PvP, bases raidées vite, record ThatsTooHard 6 mois
+- Streamers : DrDonut (@DrDonutttttt Twitch), Carvs, Qndres, Jettism, ThatsTooHard, Bilo
+- Sites : donutstats.net, donut.coflnet.com, store.donutsmp.net, discord.gg/donutsmp`;
 
 let history=[], busy=false;
 const msgsEl=document.getElementById('msgs');
@@ -264,7 +153,7 @@ function clearChat(){
   history=[];msgsEl.innerHTML='';
   const w=document.createElement('div');w.id='welcome';
   w.innerHTML=`<div class="bd">🍩</div><h1>Donut AI</h1>
-  <p>Ton assistant <b>DonutSMP</b> officieux !<br><b>Je sais tout sur le serveur — et je cherche sur le web pour la méta 🔍</b></p>
+  <p>Ton assistant <b>DonutSMP</b> officieux !<br><b>Je sais tout sur le serveur 🔍</b></p>
   <div class="chips">
     <div class="chip" onclick="chip(this)">🍩 Qui a créé DonutSMP ?</div>
     <div class="chip" onclick="chip(this)">💰 C'est quoi la méta pour s'enrichir ?</div>
@@ -278,12 +167,11 @@ function clearChat(){
   msgsEl.appendChild(w);
 }
 
-function addMsg(role,html,searched){
+function addMsg(role,html){
   document.getElementById('welcome')?.remove();
   const row=document.createElement('div');row.className=`row ${role}`;
   const av=document.createElement('div');av.className='av';av.textContent=role==='user'?'🎮':'🍩';
   const bub=document.createElement('div');bub.className='bub';
-  if(searched&&role==='ai'){const t=document.createElement('div');t.className='stag';t.innerHTML='🔍 Recherche web effectuée';bub.appendChild(t);}
   const c=document.createElement('div');c.innerHTML=html;bub.appendChild(c);
   row.appendChild(av);row.appendChild(bub);msgsEl.appendChild(row);
   msgsEl.scrollTop=msgsEl.scrollHeight;
@@ -309,43 +197,23 @@ async function send(){
   if(!txt||busy)return;
   busy=true;sbEl.disabled=true;
   inpEl.value='';inpEl.style.height='auto';
-  addMsg('user',fmt(txt),false);
+  addMsg('user',fmt(txt));
   history.push({role:'user',content:txt});
   showTyping();
-
-  let webCtx='',searched=false;
-
-  // Recherche web si nécessaire
-  if(needsSearch(txt)){
-    searched=true;
-    try{
-      const sr=await fetch('/api/chat',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({useWebSearch:true,messages:[{role:'user',content:`DonutSMP ${txt}`}]})
-      });
-      const sd=await sr.json();
-      webCtx=sd.webResults||'';
-    }catch(e){}
-  }
-
-  const userMsg=webCtx?`${txt}\n\n[DONNÉES WEB RÉCENTES]:\n${webCtx}\n\nUtilise ces données en priorité.`:txt;
-  const msgs=[...history.slice(0,-1),{role:'user',content:userMsg}];
-
   try{
     const res=await fetch('/api/chat',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({system:SYSTEM,messages:msgs})
+      body:JSON.stringify({system:KB,messages:history})
     });
     const d=await res.json();
     const reply=d.content?.[0]?.text||'Oups, erreur 🍩 Réessaie !';
     hideTyping();
-    addMsg('ai',fmt(reply),searched);
+    addMsg('ai',fmt(reply));
     history.push({role:'assistant',content:reply});
   }catch(e){
     hideTyping();
-    addMsg('ai','<p>❌ Erreur. Vérifie ta connexion et réessaie !</p>',false);
+    addMsg('ai','<p>❌ Erreur : '+e.message+'</p>');
   }
   busy=false;sbEl.disabled=false;inpEl.focus();
 }
